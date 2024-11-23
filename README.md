@@ -1,8 +1,6 @@
-# Next.js SaaS + RBAC
-This project contains all the necessary boilerplate to setup a multi-tenant SaaS with Next.js including authentication and RBAC authorization.
 ## Features
 ### Authentication
-- [ ] It should be able to authenticate using e-mail & password;
+- [x] It should be able to authenticate using e-mail & password;
 - [ ] It should be able to authenticate using Github account;
 - [ ] It should be able to recover password using e-mail;
 - [ ] It should be able to create an account (e-mail, name and password);
