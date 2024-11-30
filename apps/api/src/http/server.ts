@@ -20,6 +20,7 @@ import { resetPassword } from '@/http/routes/auth/reset-password'
 import { acceptInvite } from '@/http/routes/invites/accept-invite'
 import { createInvite } from '@/http/routes/invites/create-invite'
 import { getInvite } from '@/http/routes/invites/get-invite'
+import { getPendingInvites } from '@/http/routes/invites/get-pending-invites'
 import { rejectInvite } from '@/http/routes/invites/reject-invite'
 import { revokeInvite } from '@/http/routes/invites/revoke-invite'
 import { getMembers } from '@/http/routes/members/get-members'
@@ -39,7 +40,6 @@ import { getProjects } from '@/http/routes/projects/get-projects'
 import { updateProject } from '@/http/routes/projects/update-project'
 
 import { createAccount } from './routes/auth/create-account'
-import { getInvites } from './routes/invites/get-invites'
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
 
@@ -105,10 +105,10 @@ app.register(removeMember)
 
 app.register(createInvite)
 app.register(getInvite)
-app.register(getInvites)
 app.register(acceptInvite)
 app.register(rejectInvite)
 app.register(revokeInvite)
+app.register(getPendingInvites)
 
 app.listen({ port: env.SERVER_PORT }).then(() => {
   console.log('API is running!')
