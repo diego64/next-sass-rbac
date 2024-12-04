@@ -4,7 +4,8 @@ import { redirect } from 'next/navigation'
 import { getProfile } from '@/http/get-profile'
 
 export async function isAuthenticated() {
-  return !!(await cookies()).get('token')?.value
+  const token = (await cookies()).get('token')?.value
+  return !!token
 }
 
 export async function auth() {
